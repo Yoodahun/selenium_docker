@@ -17,6 +17,8 @@ public class TestRelativeLocators {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+
+        /*
         //above
         WebElement above = driver.findElement(RelativeLocator.with((By.tagName("input"))).above(By.tagName("select")));
         above.sendKeys("trainer@way2automation.com");
@@ -36,6 +38,20 @@ public class TestRelativeLocators {
         //near
         WebElement near = driver.findElement(RelativeLocator.with(By.partialLinkText("THE")).near(By.linkText("Signin")));
         near.click();
+
+        */
+
+        //password
+        // 링크텍스트 signin을 가진 요소 위와 xpath를 가진 요소 아래. 두 개의 사이의 요소를 찾는 것.
+        driver.findElement(RelativeLocator.with(By.tagName("input"))
+                        .above(By.linkText("Signin"))
+                        .below(By.xpath("//*[@id=\"load_form\"]/fieldset[6]/input"))
+
+        ).sendKeys("ksdfkdskf");
+
+
+        //multiple element
+
 
 
         driver.close();
