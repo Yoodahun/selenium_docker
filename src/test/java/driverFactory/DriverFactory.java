@@ -10,14 +10,17 @@ import java.time.Duration;
 public class DriverFactory {
 
     static ChromeDriver driver;
+    boolean defaultOption = true;
+
 
 
     public static ChromeDriver getDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setHeadless(true);
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(chromeOptions);
+      return  getDriver(new ChromeOptions());
+    }
 
+    public static ChromeDriver getDriver(ChromeOptions options){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
