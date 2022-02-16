@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Pdf;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.print.PrintOptions;
 
 import java.io.IOException;
@@ -13,7 +14,9 @@ import java.nio.file.Paths;
 
 public class TestPrintToPDF {
     public static void main(String[] args) throws IOException {
-        ChromeDriver driver = DriverFactory.getDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
+        ChromeDriver driver = DriverFactory.getDriver(options);
 
 
         driver.get("https://selenium.dev/");
