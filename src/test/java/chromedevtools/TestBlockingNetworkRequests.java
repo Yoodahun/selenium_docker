@@ -1,4 +1,4 @@
-package testcases;
+package chromedevtools;
 
 import com.google.common.collect.ImmutableList;
 import driverFactory.DriverFactory;

@@ -1,4 +1,4 @@
-package testcases;
+package chromedevtools;
 
 import driverFactory.DriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
