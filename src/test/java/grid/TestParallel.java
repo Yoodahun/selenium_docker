@@ -1,5 +1,6 @@
 package grid;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,16 +23,24 @@ public class TestParallel {
 
     @Parameters({"browser"})
     @Test
-    public void doSearch(String browser) throws MalformedURLException {
+    public void doSearch(String browser) throws MalformedURLException, InterruptedException {
 
-        if (browser.equals("fireforx")) {
+        if (browser.equals("firefox")) {
             cap = new FirefoxOptions();
         } else if (browser.equals("chrome")) {
             cap = new ChromeOptions();
         }
 
-        driver.set(new RemoteWebDriver(new URL("HUB URL"), cap));
+        driver.set(new RemoteWebDriver(new URL("http://localhost:4444"), cap));
 
         getDriver().get("http://www.google.com");
+        getDriver().findElement(By.name("q")).sendKeys("Hello Grid !!" + browser);
+        System.out.println(getDriver().getTitle() + "------ on browser " + browser);
+        Thread.sleep(5000);
+
+        getDriver().close();
+
+
+
     }
 }
