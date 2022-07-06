@@ -31,7 +31,7 @@ public class TestParallel {
             cap = new ChromeOptions();
         }
 
-        driver.set(new RemoteWebDriver(new URL("http://localhost:4444"), cap));
+        driver.set(new RemoteWebDriver(new URL("http://13.230.33.205:8282/"), cap));
 
         getDriver().get("http://www.google.com");
         getDriver().findElement(By.name("q")).sendKeys("Hello Grid !!" + browser);
