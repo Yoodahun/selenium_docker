@@ -8,12 +8,12 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-<!--    <test verbose="2" preserve-order="true" name="Chrome Test2">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="grid.TestParallel"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test verbose="2" preserve-order="true" name="Chrome Test2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="grid.TestParallel"/>
+        </classes>
+    </test>
 
     <test verbose="2" preserve-order="true" name="Firefox Test">
         <parameter name="browser" value="firefox"/>
