@@ -38,7 +38,6 @@ public class TestParallel {
         System.out.println(getDriver().getTitle() + "------ on browser " + browser);
         Thread.sleep(5000);
 
-        getDriver().close();
         getDriver().quit();
 
 
