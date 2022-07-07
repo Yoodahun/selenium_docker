@@ -39,6 +39,8 @@ public class TestParallel {
         Thread.sleep(5000);
 
         getDriver().close();
+        getDriver().quit();
+
 
 
 
